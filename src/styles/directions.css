@@ -1,0 +1,40 @@
+.results-con {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    padding: 30px;
+}
+.results-header {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4f4141;
+    margin-bottom: 20px;
+}
+.hightlight-local {
+    color: #8438ff;
+    font-weight: 700;
+}
+.direction {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+.green-point {
+    background-color: #24C752;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.direction-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #262626;
+    margin-top: 10px;
+}

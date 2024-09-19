@@ -31,6 +31,17 @@ export const locationOnMap = [
         y: 300
     },
     {
+        name: "New hall filling Station",
+        x: 250,
+        y: 80
+
+    },
+    {
+        name: "Nithub Unilag",
+        x: 340,
+        y: 60
+    },
+    {
         name: "Faculty of Environmental Sciences",
         x: 50,
         y: 370
@@ -40,11 +51,7 @@ export const locationOnMap = [
         x: 400,
         y: 420
     },
-    {
-        name: "Nithub Unilag",
-        x: 340,
-        y: 60
-    },
+    
     {
         name: "New hall",
         x: 200,
