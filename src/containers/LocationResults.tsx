@@ -14,7 +14,7 @@ const LocationResults = ({ paths, location, destination } : LocResultsProp) => {
       <div className='results-con'>
         {paths.map((path, index) => (
           <div className='direction' key={index}>
-           { path.desc.length > 0 ? <>
+           { path.desc ? <>
             <div className="green-point-con">
               <div className='green-point'></div>
             </div>
