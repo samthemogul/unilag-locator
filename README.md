@@ -1,5 +1,3 @@
-<!-- Create a readme.md file  for this school map app im creating. You can find the shortest route to your destination on campus with this app. Im building with React Vite and native css -->
-
 # School Map App
 
 Welcome to the School Map App! This innovative application is designed to help students, faculty, and visitors navigate the campus with ease. By leveraging the power of React Vite and native CSS, we've created a user-friendly interface that not only looks great but functions smoothly across all devices.
@@ -19,7 +17,7 @@ To get started with the School Map App, follow these simple steps:
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/school-map-app.git
+git clone git@github.com:samthemogul/unilag-locator.git
 ```
 
 ## Install Dependencies
@@ -31,5 +29,7 @@ npm install
 
 ## Run the application
 
-```npm run dev
 ```
+npm run dev
+```
+
