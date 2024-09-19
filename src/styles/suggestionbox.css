@@ -1,0 +1,25 @@
+.suggest-box-con {
+    width: 100%;
+    max-height: 250px;
+    overflow-y: scroll;
+    z-index: 1000;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.suggest-box-con ul {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.suggest-box-con ul li {
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.suggest-box-con ul li:hover {
+    background-color: #f5f5f5;
+}
