@@ -138,7 +138,7 @@ function App() {
 
       {/* Section to display the map */}
       <div className="mapsection">
-        <Map paths={paths} />
+        <Map onResultsPage={onResultsPage} paths={paths} />
       </div>
     </main>
   );

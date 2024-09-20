@@ -4,10 +4,11 @@ import "../styles/canvas.css";
 import { IPath } from '../App'
 
 interface MapProp {
-  paths: IPath[]
+  paths: IPath[];
+  onResultsPage: boolean;
 }
 
-const Map = ({ paths} : MapProp) => {
+const Map = ({ paths, onResultsPage} : MapProp) => {
   return (
     <div className="canvas">
       {locationOnMap.map((location, index) => (
@@ -32,7 +33,7 @@ const Map = ({ paths} : MapProp) => {
         </div>
       ))}
       {/* Pass all paths to the Path component for dynamic line rendering */}
-      <Path paths={paths} />
+      <Path onResultsPage={onResultsPage} paths={paths} />
     </div>
   );
 };
