@@ -13,10 +13,10 @@ const Path = ({ paths, onResultsPage }: PathProp) => {
     if (svg) {
       const animateLine = (index: number) => {
         const { start, stop } = paths[index];
-        const x1 = start.x + 30; 
-        const y1 = start.y + 30;
-        const x2 = stop.x + 30;
-        const y2 = stop.y + 30;
+        const x1 = start.x + 15; 
+        const y1 = start.y + 15;
+        const x2 = stop.x + 15;
+        const y2 = stop.y + 15;
 
         const line = document.createElementNS(
           "http://www.w3.org/2000/svg",
@@ -27,7 +27,7 @@ const Path = ({ paths, onResultsPage }: PathProp) => {
         line.setAttribute("y1", y1.toString());
         line.setAttribute("x2", x2.toString());
         line.setAttribute("y2", y2.toString());
-        line.setAttribute("stroke-width", "13");
+        line.setAttribute("stroke-width", "6");
         line.setAttribute("stroke", "#24C752");
         line.setAttribute("stroke-linecap", "round");
         line.setAttribute("stroke-linejoin", "round");

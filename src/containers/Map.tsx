@@ -23,8 +23,8 @@ const Map = ({ paths, onResultsPage} : MapProp) => {
         >
           <div
             style={{
-              width: 20,
-              height: 20,
+              width: 10,
+              height: 10,
               borderRadius: "50%",
               backgroundColor: "black",
             }}

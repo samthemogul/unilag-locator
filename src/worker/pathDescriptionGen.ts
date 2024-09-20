@@ -191,7 +191,53 @@ const generatePathDesc = (start: string, stop: string) => {
                     break;
             }
             break;
-        
+        case "Faculty of Arts":
+            switch (stop) {
+                case "Love Garden":
+                    return "Turn right and continue towards Love Garden"
+                    break;
+                case "Faculty of Arts":
+                    return "You are at Faculty of Arts already"
+                    break;
+                case "Faculty of Law":
+                    return "Turn left and continue towards Faculty of Law"
+                    break;
+                case "Faculty of Mngmt Scs.":
+                    return "Continue straight towards Faculty of Mngmt Scs."
+                    break;
+                default:
+                    break;
+            }
+            break;
+        case "Faculty of Mass Com.":
+            switch (stop) {
+                case "Ecobank":
+                    return "Cross the road towards Ecobank"
+                    break;
+                case "Faculty of Mass Com.":
+                    return "You are at Faculty of Mass Com. already"
+                    break;
+                case "Faculty of Arts":
+                    return "Turn left and continue towards Faculty of Arts"
+                    break;
+                default:
+                    break;
+            }
+            break;
+        case "Faculty of Mngmt Scs.":
+            switch (stop) {
+                case "Faculty of Arts":
+                    return "Continue straight towards Faculty of Arts"
+                    break;
+                case "Faculty of Mngmt Scs.":
+                    return "You are at Faculty of Mngmt Scs. already"
+                    break;
+                case "Faculty of Law":
+                    return "Turn right and continue towards Faculty of Law"
+                    break;
+                default:
+                    break;
+            }
             
     }
 
