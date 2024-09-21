@@ -5,238 +5,238 @@
 export const locationOnMap = [
     {
         name: "Unilag Gate",
-        x: 80,
-        y: 550
+        x: 160,
+        y: 1100
     },
     {
         name: "Lagoon Front",
-        x: 250,
+        x: 500,
         y: 0
     },
     {
         name: "Unilag Second Gate",
-        x: 900,
-        y: 440
+        x: 1800,
+        y: 880
     },
     {
         name: "Faculty of Education",
-        x: 150,
-        y: 500
+        x: 300,
+        y: 1000
     },
     {
         name: "Faculty of Environmental Sciences",
-        x: 30,
-        y: 480
+        x: 60,
+        y: 960
     },
     {
         name: "Nithub Unilag",
-        x: 300,
-        y: 320
+        x: 600,
+        y: 640
     },
     {
         name: "New Hall",
-        x: 80,
-        y: 270
+        x: 160,
+        y: 540
     },
     {
         name: "Faculty of Social Sciences",
-        x: 500,
-        y: 320
+        x: 1000,
+        y: 640
     },
     {
         name: "Wema Bank",
-        x: 90,
-        y: 480
+        x: 180,
+        y: 960
     },
     {
         name: "Unilag Sports Center",
-        x: 100,
-        y: 420
+        x: 200,
+        y: 840
     },
     {
         name: "Unilag DLI",
-        x: 720,
-        y: 300
+        x: 1440,
+        y: 600
     },
     {
         name: "Staff Quarters",
-        x: 600,
-        y: 420
+        x: 1200,
+        y: 840
     },
     {
         name: "Faculty of Arts",
-        x: 20,
-        y: 60
+        x: 40,
+        y: 120
     },
     {
         name: "Faculty of Mass Com.",
-        x: 100,
-        y: 100
+        x: 200,
+        y: 200
     },
     {
         name: "Faculty of Mngmt Scs.",
-        x: 30,
-        y: 30
+        x: 60,
+        y: 60
     },
     {
         name: "Faculty of Law",
-        x: 5,
-        y: 40
+        x: 10,
+        y: 80
     },
     {
         name: "Faculty of Science",
-        x: 500,
-        y: 30
+        x: 1000,
+        y: 60
     },
     {
         name: "Faculty of Engineering",
-        x: 300,
-        y: 20
+        x: 600,
+        y: 40
     },
     {
         name: "Access Bank",
-        x: 100,
-        y: 290
+        x: 200,
+        y: 580
     },
     { 
         name: "First Bank",
-        x: 650,
-        y: 350
+        x: 1300,
+        y: 700
     },
     {
         name: "GTBank",
-        x: 350,
-        y: 50
+        x: 700,
+        y: 100
     },
     {
         name: "Zenith Bank",
-        x: 400,
-        y: 50
+        x: 800,
+        y: 100
     },
     {
         name: "Ecobank",
-        x: 120,
+        x: 240,
         y: 70
     },
     {
         name: "Elkanemi Hostel",
-        x: 280,
-        y: 550
+        x: 560,
+        y: 1100
     },
     {
         name: "Femi Gbaj. Hostel",
-        x: 200,
-        y: 550
+        x: 400,
+        y: 1100
     },
     {
         name: "Biobaku Hostel",
-        x: 460,
-        y: 480
+        x: 920,
+        y: 960
     },
     {
         name: "Amina Hostel",
-        x: 500,
-        y: 500
+        x: 1000,
+        y: 1000
     },
     {
         name: "Kofo Hostel",
-        x: 450,
-        y: 500
+        x: 900,
+        y: 1000
     },
     {
         name: "Honors Hostel",
-        x: 740,
-        y: 250  
+        x: 1480,
+        y: 500  
     },
     {
         name: "Women's Society Hostel",
-        x: 720,
-        y: 260
+        x: 1440,
+        y: 520
     },
     {
         name: "Makama Hostel",
-        x: 10,
-        y: 280
+        x: 20,
+        y: 560
     },
     {
         name: "Eninjoku Hostel",
-        x: 10,
-        y: 240
+        x: 20,
+        y: 480
     },
     {
         name: "Sodeinde Hostel",
-        x: 5,
-        y: 260
+        x: 10,
+        y: 520
     },
     {
         name: "Mariere Hostel",
-        x: 300,
-        y: 50
+        x: 600,
+        y: 100
     },
     {
         name: "Moremi Hostel",
-        x: 320,
-        y: 90
+        x: 640,
+        y: 180
     },
     {
         name: "Jaja Hostel",
-        x: 420,
-        y: 40
+        x: 840,
+        y: 80
     },
     {
         name: "Scholars Suite",
-        x: 660,
-        y: 130
+        x: 1320,
+        y: 260
     },
     {
         name: "Unilag Medical Center",
-        x: 600,
-        y: 120
+        x: 1200,
+        y: 240
     },
     {
         name: "Unilag Printing Press",
-        x: 660,
-        y: 230
+        x: 1320,
+        y: 460
     },
     {
         name: "Unilag Main Library",
-        x: 50,
-        y: 20
-    },
-    {
-        name: "CITS",
-        x: 110,
-        y: 200
-    },
-    {
-        name: "Senate Building",
         x: 100,
-        y: 30
-    },
-    {
-        name: "New Hall Filling Station",
-        x: 120,
-        y: 350
-    },
-    {
-        name: "Love Garden",
-        x: 50,
         y: 40
     },
     {
-        name: "Amphitheatre",
-        x: 130,
+        name: "CITS",
+        x: 220,
         y: 400
     },
     {
+        name: "Senate Building",
+        x: 200,
+        y: 60
+    },
+    {
+        name: "New Hall Filling Station",
+        x: 240,
+        y: 700
+    },
+    {
+        name: "Love Garden",
+        x: 100,
+        y: 80
+    },
+    {
+        name: "Amphitheatre",
+        x: 260,
+        y: 800
+    },
+    {
         name: "Education Garden",
-        x: 300,
-        y: 500
+        x: 600,
+        y: 1000
     },
     {
         name: "Unilag Staff School",
-        x: 840,
-        y: 300
+        x: 1680,
+        y: 600
     }
 
 ]

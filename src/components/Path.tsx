@@ -13,10 +13,10 @@ const Path = ({ paths, onResultsPage }: PathProp) => {
     if (svg) {
       const animateLine = (index: number) => {
         const { start, stop } = paths[index];
-        const x1 = start.x + 15; 
-        const y1 = start.y + 15;
-        const x2 = stop.x + 15;
-        const y2 = stop.y + 15;
+        const x1 = start.x + 50; 
+        const y1 = start.y + 50;
+        const x2 = stop.x + 50;
+        const y2 = stop.y + 50;
 
         const line = document.createElementNS(
           "http://www.w3.org/2000/svg",
@@ -27,19 +27,20 @@ const Path = ({ paths, onResultsPage }: PathProp) => {
         line.setAttribute("y1", y1.toString());
         line.setAttribute("x2", x2.toString());
         line.setAttribute("y2", y2.toString());
-        line.setAttribute("stroke-width", "6");
+        line.setAttribute("stroke-width", "13");
         line.setAttribute("stroke", "#24C752");
         line.setAttribute("stroke-linecap", "round");
         line.setAttribute("stroke-linejoin", "round");
 
+        const length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        line.setAttribute("stroke-dasharray", length.toString());
+        line.setAttribute("stroke-dashoffset", length.toString());
+
         svg.appendChild(line);
         const animation = line.animate(
-          [
-            { x2: x1, y2: y1 },
-            { x2: x2, y2: y2 },
-          ],
+          [{ strokeDashoffset: length }, { strokeDashoffset: 0 }],
           {
-            duration: 300, 
+            duration: 2000, 
             fill: "forwards" as FillMode,
             easing: "ease-in-out",
           }
