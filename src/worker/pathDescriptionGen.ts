@@ -238,6 +238,24 @@ const generatePathDesc = (start: string, stop: string) => {
                 default:
                     break;
             }
+            break;
+        case "Faculty of Law":
+            switch (stop) {
+                case "Faculty of Mngmt Scs.":
+                    return "Turn left and continue towards Faculty of Mngmt Scs."
+                    break;
+                case "Faculty of Law":
+                    return "You are at Faculty of Law already"
+                    break;
+                case "Faculty of Arts":
+                    return "Turn right and continue towards Faculty of Arts"
+                    break;
+                case "Love Garden":
+                    return "Continue straight towards Love Garden"
+                    break;
+                default:
+                    break;
+            }
             
     }
 
