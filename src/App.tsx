@@ -148,112 +148,125 @@ function App() {
       </div>
 
       {/* MObile Section */}
-      {!onResultsPage ? (
-        <div className="mobile-form-section">
-          <div className="logo">
-            <div className="logo-imagecontainer">
-              <img className="logo-image" src={unilagLogo} alt="Unilag Logo" />
+      <div className="mobile-sec">
+        {!onResultsPage ? (
+          <div className="mobile-form-section">
+            <div className="logo">
+              <div className="logo-imagecontainer">
+                <img
+                  className="logo-image"
+                  src={unilagLogo}
+                  alt="Unilag Logo"
+                />
+              </div>
+              <h3 className="logo-text">Unilag Locator</h3>
             </div>
-            <h3 className="logo-text">Unilag Locator</h3>
+            <div className="info">
+              {!onResultsPage ? (
+                <>
+                  <h3 className="header-text">Where are you?</h3>
+                  <input
+                    className="input-field"
+                    type="text"
+                    placeholder="Enter your location"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                    onFocus={() => setFocusedLocation(true)}
+                    onBlur={handleBlur}
+                  />
+                  {focusedLocation ? (
+                    <SuggestionBox
+                      locations={locations}
+                      currentLocationValue={location}
+                      selectLocation={handleSelectLocation}
+                    />
+                  ) : null}
+                  <h3 className="header-text">Where are you going to?</h3>
+                  <input
+                    className="input-field"
+                    type="text"
+                    value={destination}
+                    onChange={(e) => setDestination(e.target.value)}
+                    placeholder="Enter your destination"
+                    onFocus={() => setSelectedDestination(true)}
+                    onBlur={handleBlur}
+                  />
+                  {selectedDestination ? (
+                    <SuggestionBox
+                      locations={locations}
+                      currentDestinationValue={destination}
+                      selectDestination={handleSelectDestination}
+                    />
+                  ) : null}
+                </>
+              ) : (
+                <>
+                  <LocationResults
+                    paths={paths}
+                    location={location}
+                    destination={destination}
+                  />
+                  <button onClick={backToHome} className="button">
+                    Back to home
+                  </button>
+                </>
+              )}
+            </div>
           </div>
-          <div className="info">
-            {!onResultsPage ? (
-              <>
-                <h3 className="header-text">Where are you?</h3>
-                <input
-                  className="input-field"
-                  type="text"
-                  placeholder="Enter your location"
-                  value={location}
-                  onChange={(e) => setLocation(e.target.value)}
-                  onFocus={() => setFocusedLocation(true)}
-                  onBlur={handleBlur}
+        ) : (
+          <>
+            <div className="logo">
+              <div className="logo-imagecontainer">
+                <img
+                  className="logo-image"
+                  src={unilagLogo}
+                  alt="Unilag Logo"
                 />
-                {focusedLocation ? (
-                  <SuggestionBox
-                    locations={locations}
-                    currentLocationValue={location}
-                    selectLocation={handleSelectLocation}
-                  />
-                ) : null}
-                <h3 className="header-text">Where are you going to?</h3>
-                <input
-                  className="input-field"
-                  type="text"
-                  value={destination}
-                  onChange={(e) => setDestination(e.target.value)}
-                  placeholder="Enter your destination"
-                  onFocus={() => setSelectedDestination(true)}
-                  onBlur={handleBlur}
-                />
-                {selectedDestination ? (
-                  <SuggestionBox
-                    locations={locations}
-                    currentDestinationValue={destination}
-                    selectDestination={handleSelectDestination}
-                  />
-                ) : null}
-              </>
-            ) : (
-              <>
+              </div>
+              <h3 className="logo-text">Unilag Locator</h3>
+            </div>
+            <div className="mobilemap">
+              <Map onResultsPage={onResultsPage} paths={paths} />
+            </div>
+            {showMobileDirections ? (
+              <div className="mobile-directions">
+                <button
+                  onClick={() => setShowMobileDirections(false)}
+                  className="close-pop"
+                >
+                  <span className="material-symbols-outlined">close</span>
+                </button>
                 <LocationResults
                   paths={paths}
                   location={location}
                   destination={destination}
                 />
-                <button onClick={backToHome} className="button">
-                  Back to home
-                </button>
-              </>
-            )}
-          </div>
-        </div>
-      ) : (
-        <>
-          <div className="logo">
-            <div className="logo-imagecontainer">
-              <img className="logo-image" src={unilagLogo} alt="Unilag Logo" />
-            </div>
-            <h3 className="logo-text">Unilag Locator</h3>
-          </div>
-          <div className="mobilemap">
-            <Map onResultsPage={onResultsPage} paths={paths} />
-          </div>
-          {showMobileDirections ? (
-            <div className="mobile-directions">
-              <button onClick={() => setShowMobileDirections(false)} className="close-pop">
-                <span className="material-symbols-outlined">close</span>
-              </button>
-              <LocationResults
-                paths={paths}
-                location={location}
-                destination={destination}
-              />
-            </div>
-          ) : null}
-        </>
-      )}
-      <div className="action-buttons">
-        {!onResultsPage ? (
-          <button onClick={handleSubmit} className="mobile-btn">
-            Get directions
-          </button>
-        ) : (
-          <div className="map-buttons">
-            <button onClick={() => (
-              backToHome(),
-              setShowMobileDirections(false)
-            )} className="mobile-btn">
-              Home
-            </button>
-            <button
-              onClick={() => setShowMobileDirections(true)}
-              className="mobile-btn"
-            >
-              Directions
-            </button>
-          </div>
+              </div>
+            ) : null}
+          </>
         )}
+        <div className="action-buttons">
+          {!onResultsPage ? (
+            <button onClick={handleSubmit} className="mobile-btn">
+              Get directions
+            </button>
+          ) : (
+            <div className="map-buttons">
+              <button
+                onClick={() => (backToHome(), setShowMobileDirections(false))}
+                className="mobile-btn"
+              >
+                Home
+              </button>
+              <button
+                onClick={() => setShowMobileDirections(true)}
+                className="mobile-btn"
+              >
+                Directions
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </main>
   );

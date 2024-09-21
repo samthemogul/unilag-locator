@@ -107,7 +107,14 @@
   background-color: #611ad5;
 }
 
+.mobile-sec {
+  display: none;
+}
+
 @media (max-width: 764px) {
+  .mobile-sec {
+    display: block;
+  }
   .action-buttons {
     position: absolute;
     bottom: 0;
