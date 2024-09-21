@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import Path from "../components/Path"; // Import the Path component
+import Path from "../components/Path"; 
 import { locationOnMap } from "../constants/locations";
 import "../styles/canvas.css";
 import { IPath } from "../App";
@@ -14,58 +14,44 @@ interface MapProp {
 const Map = ({ paths, onResultsPage }: MapProp) => {
   const mapRef = useRef<HTMLDivElement>(null);
   const [mapCenter, setMapCenter] = useState({ x: 0, y: 100, scale: 0.7 });
-  const [isFollowingPath, setIsFollowingPath] = useState(false); // Track if following path
+  const [isFollowingPath, setIsFollowingPath] = useState(false); 
 
-  // Gesture handling for dragging and zooming
+
   useGesture(
     {
-      onDrag: ({ offset }) => { // Stop following the path on manual drag
+      onDrag: ({ offset }) => { 
         setMapCenter((prevCenter) => ({
           ...prevCenter,
           x: offset[0],
           y: offset[1],
         }));
       },
-      onPinch: ({ offset: [d] }) => { // Stop following the path on manual pinch
+      onPinch: ({ offset: [d] }) => { 
         setMapCenter((prevCenter) => ({ ...prevCenter, scale: 1 + d / 200 }));
       },
     },
     { domTarget: mapRef, eventOptions: { passive: false } }
   );
 
-  // Function to zoom into a specific location
-  const zoomToLocation = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    setMapCenter((prevCenter) => ({ ...prevCenter, x: x, y: y, scale: 2 }));
-  };
 
-  // Effect to handle path-following logic
+
   useEffect(() => {
     let animationTimeout: string | number | NodeJS.Timeout | undefined;
     if (onResultsPage && paths.length > 0 && !isFollowingPath) {
       const followPath = async () => {
-        setIsFollowingPath(true); // Start following path
+        setIsFollowingPath(true);
         for (let i = 0; i < paths.length; i++) {
-          const { start, stop } = paths[i];
-          // Calculate midpoint of the current path segment
-          const midX = (start.x + stop.x) / 2;
-          const midY = (start.y + stop.y) / 2;
+          const { start } = paths[i];
 
           console.log("midX: " + start.x, "midY" + start.y)
 
-
-          // Move the map to the start of the path
           setMapCenter({
             x: -start.x + window.innerWidth / 1.5,
             y: -start.y + window.innerHeight / 1.5,
-            scale: 1.2, // Adjust scale based on preference
+            scale: 1.2, 
           });
-
-          // Wait for a short duration before moving to the next segment
           await new Promise((resolve) => {
-            animationTimeout = setTimeout(resolve, 2000); // 500ms delay between movements
+            animationTimeout = setTimeout(resolve, 2000); 
           });
         }
       };
@@ -80,7 +66,6 @@ const Map = ({ paths, onResultsPage }: MapProp) => {
     
   }, [onResultsPage, isFollowingPath]);
 
-  // Reset the map when leaving the results page
   useEffect(() => {
     if (!onResultsPage) {
       setMapCenter({ x: 0, y: 0, scale: 1 });
@@ -98,7 +83,7 @@ const Map = ({ paths, onResultsPage }: MapProp) => {
         left: mapCenter.x,
         top: mapCenter.y,
         touchAction: "none",
-        transition: "0.5s all", // Smooth transition for map movement
+        transition: "0.5s all",
         transform: `scale(${mapCenter.scale})`,
       }}
     >
@@ -123,7 +108,6 @@ const Map = ({ paths, onResultsPage }: MapProp) => {
           <p className="location-description">{location.name}</p>
         </div>
       ))}
-      {/* Pass all paths to the Path component for dynamic line rendering */}
       <Path onResultsPage={onResultsPage} paths={paths} />
     </div>
   );
