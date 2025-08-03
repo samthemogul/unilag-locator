@@ -2,6 +2,9 @@
 
 Welcome to the School Map App! This innovative application is designed to help students, faculty, and visitors navigate the campus with ease. By leveraging the power of React Vite and native CSS, we've created a user-friendly interface that not only looks great but functions smoothly across all devices.
 
+## Live App
+Link: https://unilag-locator.onrender.com/
+
 ## Features
 
 - **Find the Shortest Route:** Quickly find the shortest path to your destination anywhere on campus.
